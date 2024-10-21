@@ -20,7 +20,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task1.V1.Lib
             string strRes;
             for (int x = startValue; x <= stopValue; x++)
             {
-                res = Math.Round((5 * x + 2.5) / (Math.Sin(x) + 2 + x) + 2, 2);
+                res = Math.Round((5 * x + 2.5) / (Math.Sin(x) + 2*x + x) + 2, 2);
                 strRes = Convert.ToString(res);
 
                 if (Math.Sin(x) - 2 + x == 0)
