@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Text;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.SafonovRV.Sprint5.Task1.V1.Lib
 {
@@ -6,38 +7,49 @@ namespace Tyuiu.SafonovRV.Sprint5.Task1.V1.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask1.txt" });
 
-            FileInfo fileInfo = new FileInfo(path);
-            bool fileExists = fileInfo.Exists;
 
-            if (fileExists) { File.Delete(path); }
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask1.txt");
 
-            double res;
-            string strRes;
-            for (int x = startValue; x <= stopValue; x++)
+            try
             {
-                res = Math.Round((5 * x + 2.5) / (Math.Sin(x) + 2 + x) + 2, 2);
-                strRes = Convert.ToString(res);
+                using (StreamWriter writer = new StreamWriter(path, false))
+                {
+                    StringBuilder sb = new StringBuilder();
 
-                if (Math.Sin(x) - 2 + x == 0)
-                {
-                    File.AppendAllText(path, "0");
+                    for (int x = startValue; x <= stopValue; x++)
+                    {
+                        double denominator = Math.Sin(x) + 2 + x;
+
+                        if (Math.Abs(denominator) < double.Epsilon)
+                        {
+                            sb.AppendLine("0");
+                        }
+                        else
+                        {
+                            double res = Math.Round((5 * x + 2.5) / denominator + 2, 2);
+                            sb.AppendLine(res.ToString());
+                        }
+                    }
+
+                    // Remove the last newline
+                    if (sb.Length > 0) sb.Length--;
+
+                    writer.Write(sb.ToString());
                 }
 
-                if (x != stopValue)
-                {
-                    File.AppendAllText(path, strRes + Environment.NewLine);
-                }
-                else
-                {
-                    File.AppendAllText(path, strRes);
-                }
+                return path;
             }
-            return path;
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return null;
+            }
         }
     }
 }
+
+
 
 
 
