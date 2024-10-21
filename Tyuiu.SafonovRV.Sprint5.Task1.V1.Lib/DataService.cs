@@ -9,42 +9,35 @@ namespace Tyuiu.SafonovRV.Sprint5.Task1.V1.Lib
         {
 
 
-            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask1.txt");
+            string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask1.txt" });
 
-            try
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists) { File.Delete(path); }
+
+            double res;
+            string strRes;
+            for (int x = startValue; x <= stopValue; x++)
             {
-                using (StreamWriter writer = new StreamWriter(path, false))
+                res = Math.Round((5 * x - 2.5) / (Math.Sin(x) - 2 + x) + 2, 2);
+                strRes = Convert.ToString(res);
+
+                if (Math.Sin(x) - 2 + x == 0)
                 {
-                    StringBuilder sb = new StringBuilder();
-
-                    for (int x = startValue; x <= stopValue; x++)
-                    {
-                        double denominator = Math.Sin(x) + 2 + x;
-
-                        if (Math.Abs(denominator) < double.Epsilon)
-                        {
-                            sb.AppendLine("0");
-                        }
-                        else
-                        {
-                            double res = Math.Round((5 * x + 2.5) / denominator + 2, 2);
-                            sb.AppendLine(res.ToString());
-                        }
-                    }
-
-                    // Remove the last newline
-                    if (sb.Length > 0) sb.Length--;
-
-                    writer.Write(sb.ToString());
+                    File.AppendAllText(path, "0");
                 }
 
-                return path;
+                if (x != stopValue)
+                {
+                    File.AppendAllText(path, strRes + Environment.NewLine);
+                }
+                else
+                {
+                    File.AppendAllText(path, strRes);
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-                return null;
-            }
+            return path;
         }
     }
 }
