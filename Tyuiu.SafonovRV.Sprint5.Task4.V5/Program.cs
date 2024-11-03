@@ -25,7 +25,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task4.V5
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                       *");
             Console.WriteLine("**************************************************************************");
 
-            string path = @"C:\DataSprint5\Sprint5Task4\InPutDataFileTask4V5.txt";
+            string path = @"C:\Users\rusla\source\repos\Tyuiu.SafonovRV.Sprint5\Tyuiu.SafonovRV.Sprint5.Task4.V5\bin\Debug\net8.0\OutPutFileTask4.txt";
 
             Console.WriteLine("Данные находятся в файле" + path);
 
