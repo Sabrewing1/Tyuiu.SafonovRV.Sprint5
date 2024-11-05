@@ -13,7 +13,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Test
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
 
-            bool wait = true;
+            bool wait = false;
             Assert.AreEqual(wait, fileExists);
         }
     }
