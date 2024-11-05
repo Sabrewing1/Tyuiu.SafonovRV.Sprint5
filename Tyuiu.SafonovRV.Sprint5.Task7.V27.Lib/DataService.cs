@@ -7,12 +7,13 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string pathSaveFile = $@"{Directory.GetCurrentDirectory()}\OutPutDataFileTask7V27.txt";
+            FileInfo fileInfo = new FileInfo(Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V27.txt" }));
+            if (fileInfo.Exists)
+            {
+                File.Delete(Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V27.txt" }));
+            }
 
-            FileInfo fileInfo = new FileInfo(pathSaveFile);
-            bool fileExists = fileInfo.Exists;
 
-            
             string strLine = "";
             using (StreamReader reader = new StreamReader(path))
             {
@@ -41,12 +42,12 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
                     Console.Write(str[i]);
                 }
                 Console.ReadLine();
-                File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
+                File.AppendAllText(path, strLine + Environment.NewLine);
                 strLine = "";
             }
 
 
-            return pathSaveFile;
+            return path;
         }
     }
 }

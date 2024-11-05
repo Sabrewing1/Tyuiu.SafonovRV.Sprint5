@@ -16,7 +16,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task4.V5
             Console.WriteLine("* Выполнил: Сафонов Руслан Васильевич | АСОиУБ-24-1                      *");
             Console.WriteLine("**************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                               *");
-            Console.WriteLine("* Дан файл C:|DataSprint5|Sprint5Task4|InPutDataFileTask4V12.txt         *");
+            Console.WriteLine("* Дан файл C:|DataSprint5|Sprint5Task4|InPutDataFileTask4V5.txt          *");
             Console.WriteLine("* в котором есть вещественное значение. Прочитать значение из файла и    *");
             Console.WriteLine("* подставить вместо Х в формулу. Вычислить значение по формуле           *");
             Console.WriteLine("* (Полученное значение округлить до трёх знаков после запятой) и вернуть *");
