@@ -16,25 +16,43 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
             {
                 File.Delete(pathSaveFile);
             }
-
             string strLine = "";
             using (StreamReader reader = new StreamReader(path))
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                string str = "  c  o d  e  r ";
+                string tmp = "";
+                for (int i = 0; i < str.Length; i++)
                 {
-                    for (int i = 0; i < line.Length; i++)
+                    bool exit = false;
+                    if (str[i] == ' ')
                     {
-                        strLine = Regex.Replace(line, @"\b\p{IsCyrillic}+\b", "");
+                        for (int j = i + 1; j < str.Length; j++)
+                        {
+                            if (str[j] != ' ')
+                                break;
+                            if (j + 1 > str.Length - 1)
+                            {
+                                exit = true;
+                                break;
+                            }
+                            i = j + 1;
+                        }
                     }
-
-
-                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = "";
+                    if (exit)
+                        break;
+                    tmp = tmp + str[i];
+                    Console.Write(str[i]);
                 }
+                Console.ReadLine();
+                File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
+                strLine = "";
             }
+
 
             return pathSaveFile;
         }
     }
 }
+
+
+
