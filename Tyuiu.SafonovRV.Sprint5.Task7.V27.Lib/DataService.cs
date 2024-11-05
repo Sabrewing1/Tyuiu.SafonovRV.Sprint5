@@ -46,8 +46,9 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
                 strLine = "";
             }
 
+            string a = "ghbdtn";
 
-            return path;
+            return a;
         }
     }
 }
