@@ -8,13 +8,13 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27
         {
             DataService ds = new DataService();
 
-            Console.Title = "Спринт #5 | Выполнила: Сафонов Р.В | АСОиУБ-24-1";
+            Console.Title = "Спринт #5 | Выполнил: Сафонов Р.В | АСОиУБ-24-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
             Console.WriteLine("* Тема: Добавление к решению итоговых проектов по спринту                 *");
             Console.WriteLine("* Задание: 7                                                              *");
             Console.WriteLine("* Вариант #27                                                             *");
-            Console.WriteLine("* Выполнила: Сафонов Руслан Васильевич                                    *");
+            Console.WriteLine("* Выполнил: Сафонов Руслан Васильевич                                     *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Дано выражение, в котором есть набор символьных данных.Удалить все      *");
