@@ -18,7 +18,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
             string strLine = "";
             using (StreamReader reader = new StreamReader(path))
             {
-                string str = "  c  o d  e  r ";
+                string str = "Это строка с пробелами";
                 string tmp = "";
                 for (int i = 0; i < str.Length; i++)
                 {
