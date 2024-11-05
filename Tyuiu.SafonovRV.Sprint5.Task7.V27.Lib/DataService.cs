@@ -12,10 +12,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
             FileInfo fileInfo = new FileInfo(pathSaveFile);
             bool fileExists = fileInfo.Exists;
 
-            if (fileExists)
-            {
-                File.Delete(pathSaveFile);
-            }
+            
             string strLine = "";
             using (StreamReader reader = new StreamReader(path))
             {
