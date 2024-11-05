@@ -8,7 +8,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
         public string LoadDataAndSave(string path)
         {
             
-            /*FileInfo fileInfo = new FileInfo(Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V27.txt" }));
+            FileInfo fileInfo = new FileInfo(Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V27.txt" }));
             if (fileInfo.Exists)
             {
                 File.Delete(Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V27.txt" }));
@@ -47,9 +47,9 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
                 strLine = "";
             }
 
-            /*/string a = "Этострокаспробелами";
+            ;
 
-            return a;
+            return path;
         }
     }
 }
