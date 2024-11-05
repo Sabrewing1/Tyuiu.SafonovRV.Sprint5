@@ -24,7 +24,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            string path = $@"C:\Users\rusla\source\repos\Tyuiu.SafonovRV.Sprint5\Tyuiu.SafonovRV.Sprint5.Task7.V27\bin\Debug\net8.0\OutPutDataFileTask7V27";
+            string path = $@"C:\Users\rusla\source\repos\Tyuiu.SafonovRV.Sprint5\Tyuiu.SafonovRV.Sprint5.Task7.V27\bin\Debug\net8.0\InPutDataFileTask7V27";
             string pathSaveFile = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask7.txt";
 
             Console.WriteLine($"Данные находятся в файле: {path}");
