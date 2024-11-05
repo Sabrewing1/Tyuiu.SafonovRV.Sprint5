@@ -47,7 +47,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
                 strLine = "";
             }
 
-            /*/string a = "это без пробелов";
+            /*/string a = "Этострокаспробелами";
 
             return a;
         }
