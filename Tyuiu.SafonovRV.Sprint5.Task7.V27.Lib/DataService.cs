@@ -49,7 +49,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
 
             ;
 
-            return path;
+            return strLine;
         }
     }
 }
