@@ -6,19 +6,27 @@ namespace Tyuiu.SafonovRV.Sprint5.Task5.V16.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            double MaxValue = int.MinValue;
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+            string fileContent = File.ReadAllText(path);
+            var values = fileContent
+                .Split(new[] { ' ', '\n', '\r', ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(val =>
                 {
-                    if (Convert.ToDouble(line) < MaxValue)
-                        MaxValue = Math.Round(Convert.ToDouble(line)/10, 3);
-                }
-                return MaxValue;
-            }
+                    if (double.TryParse(val, out double doubleValue))
+                    {
+                        return Math.Round(doubleValue, 3);
+                    }
+                    return (double?)null;
+                })
+                .Where(val => val.HasValue)
+                .Select(val => val.Value)
+                .ToArray();
+            var maxInteger = values.Where(val => val == Math.Truncate(val)).Max();
+            return maxInteger;
         }
     }
 }
     
+
+
+
 
