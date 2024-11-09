@@ -31,39 +31,39 @@ namespace Tyuiu.SafonovRV.Sprint5.Task2.V5
                 Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
                 Console.WriteLine("***************************************************************************");
                 Console.WriteLine("Массив: ");
-                for (int i = 0; i < rows; i++)
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < colums; j++)
                 {
-                    for (int j = 0; j < colums; j++)
-                    {
-                        Console.Write($"{mtrx[i, j]} \t");
-                    }
-                    Console.WriteLine();
+                    Console.Write($"{mtrx[i, j]} \t");
                 }
-
                 Console.WriteLine();
-                Console.WriteLine("***************************************************************************");
-                Console.WriteLine("* РЕЗУЛЬТАТ                                                               *");
-                Console.WriteLine("***************************************************************************");
-
-                string path = ds.SaveToFileTextData(mtrx);
-
-                Console.WriteLine($"Файл: {path}");
-                Console.WriteLine("Создан!");
-                Console.WriteLine();
-
-                string[] y = File.ReadAllLines(path);
-
-                Console.WriteLine("Результирующий массив:");
-                for (int i = 0; i < rows; i++)
-                {
-                    string[] yy = y[i].Split(';');
-                    for (int j = 0; j < colums; j++)
-                    {
-                        Console.Write(($"{Convert.ToDouble(yy[j])} \t"));
-                    }
-                    Console.WriteLine();
-                }
-                Console.ReadKey();
             }
+
+            Console.WriteLine();
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ                                                               *");
+            Console.WriteLine("***************************************************************************");
+
+            string path = ds.SaveToFileTextData(mtrx);
+
+            Console.WriteLine($"Файл: {path}");
+            Console.WriteLine("Создан!");
+            Console.WriteLine();
+
+            string[] y = File.ReadAllLines(path);
+
+            Console.WriteLine("Результирующий массив:");
+            for (int i = 0; i < rows; i++)
+            {
+                string[] yy = y[i].Split(';');
+                for (int j = 0; j < colums; j++)
+                {
+                    Console.Write(($"{Convert.ToDouble(yy[j])} \t"));
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
     }
+}
