@@ -20,7 +20,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task5.V16.Lib
                 .Where(val => val.HasValue)
                 .Select(val => val.Value)
                 .ToArray();
-            var maxInteger = values.Where(val => val == Math.Truncate(val)).Max();
+            var maxInteger = values.Where(val => val == Math.Truncate(val)).Min();
             return maxInteger;
         }
     }
