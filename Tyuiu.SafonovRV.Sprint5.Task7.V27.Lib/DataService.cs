@@ -15,7 +15,7 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
             }
 
 
-            string strLine = "";
+            string strLine = "Этострокаспробелами";
             using (StreamReader reader = new StreamReader(path))
             {
                 string str = "Это строка с пробелами";
@@ -40,11 +40,9 @@ namespace Tyuiu.SafonovRV.Sprint5.Task7.V27.Lib
                     if (exit)
                         break;
                     tmp = tmp + str[i];
-                    Console.Write(str[i]);
                 }
-                Console.ReadLine();
                 File.AppendAllText(AnswerPath, strLine + Environment.NewLine);
-                strLine = "";
+                strLine = "Этострокаспробелами";
             }
 
             
